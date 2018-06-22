@@ -33,11 +33,13 @@ TrashCanRandom:
 	swap a
 	cp 1 * $ff / 3
 	ld b, 0
-	ret c
+	jr c, .finish
 	cp 2 * $ff / 3
 	ld b, 1
-	ret c
+	jr c, .finish
 	ld b, 2
+.finish
+	ld a, b 
 	ret
 
 .four

@@ -335,24 +335,17 @@ LearnMoveFromLevelUp:
 	cp b ; is the move learnt at the mon's current level?
 	ld a, [hli] ; move ID
 	jr nz, .learnSetLoop
-	ld d, a ; ID of move to learn
-	ld a, [wMonDataLocation]
-	and a
-	jr nz, .next
-; If [wMonDataLocation] is 0 (PLAYER_PARTY_DATA), get the address of the mon's
-; current moves in party data. Every call to this function sets
-; [wMonDataLocation] to 0 because other data locations are not supported.
-; If it is not 0, this function will not work properly.
+	push hl
+	ld d, a ; ID of move to learn.
 	ld hl, wPartyMon1Moves
 	ld a, [wWhichPokemon]
 	ld bc, wPartyMon2 - wPartyMon1
 	call AddNTimes
-.next
 	ld b, NUM_MOVES
 .checkCurrentMovesLoop ; check if the move to learn is already known
 	ld a, [hli]
 	cp d
-	jr z, .done ; if already known, jump
+	jr z, .hasMove ; if already known, jump
 	dec b
 	jr nz, .checkCurrentMovesLoop
 	ld a, d
@@ -363,19 +356,22 @@ LearnMoveFromLevelUp:
 	predef LearnMove
 	ld a, b
 	and a
-	jr z, .done
+	jr z, .hasMove
 	callab IsThisPartymonStarterPikachu_Party
-	jr nc, .done
+	jr nc, .hasMove
 	ld a, [wMoveNum]
 	cp THUNDERBOLT
 	jr z, .foundThunderOrThunderbolt
 	cp THUNDER
-	jr nz, .done
+	jr nz, .hasMove
 .foundThunderOrThunderbolt
 	ld a, $5
 	ld [wd49c], a
 	ld a, $85
 	ld [wPikachuMood], a
+.hasMove
+	pop hl
+	jr .learnSetLoop
 .done
 	ld a, [wcf91]
 	ld [wd11e], a

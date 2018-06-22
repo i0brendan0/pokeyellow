@@ -1,10 +1,12 @@
 DisplayEffectiveness:
 	ld a, [wDamageMultipliers]
-	and a, $7F
-	cp a, $0A
+	and $7F
 	ret z
+	cp %00000011
+	ret z
+	and %00000001
 	ld hl, SuperEffectiveText
-	jr nc, .done
+	jr z, .done
 	ld hl, NotVeryEffectiveText
 .done
 	jp PrintText

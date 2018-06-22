@@ -8,10 +8,10 @@ TypeNames:
 	dw .Rock
 	dw .Bird
 	dw .Bug
-	dw .Ghost
-
-	dw .Normal
-	dw .Normal
+	dw .Dark
+	dw .Steel
+	
+	dw .Unknown
 	dw .Normal
 	dw .Normal
 	dw .Normal
@@ -29,6 +29,8 @@ TypeNames:
 	dw .Psychic
 	dw .Ice
 	dw .Dragon
+	dw .Ghost
+	dw .Fairy
 
 .Normal:   db "NORMAL@"
 .Fighting: db "FIGHTING@"
@@ -46,3 +48,7 @@ TypeNames:
 .Bug:      db "BUG@"
 .Ghost:    db "GHOST@"
 .Dragon:   db "DRAGON@"
+.Dark:     db "DARK@"
+.Steel:    db "STEEL@"
+.Unknown   db "???@"
+.Fairy     db "FAIRY@"

@@ -13,9 +13,9 @@ dw AbraPicFront
 dw AbraPicBack
 ; attacks known at lvl 0
 db TELEPORT
-db 0
-db 0
-db 0
+db NO_MOVE
+db NO_MOVE
+db NO_MOVE
 db 3 ; growth rate
 ; learnset
 	tmlearn 1,5,6,8
@@ -25,4 +25,4 @@ db 3 ; growth rate
 	tmlearn 33,34,35,40
 	tmlearn 44,45,46
 	tmlearn 49,50,55
-db 0 ; padding
+db BANK(AbraPicFront)

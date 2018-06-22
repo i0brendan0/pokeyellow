@@ -971,7 +971,13 @@ wLowHealthAlarmDisabled:: ; ccf6
 wPlayerMonMinimized:: ; ccf7
 	ds 1
 
-	ds 13
+	ds 2
+	
+wEXPBarPixelLength:: ds 1
+wEXPBarBaseEXP:: ds 3
+wEXPBarCurEXP:: ds 3
+wEXPBarNeededEXP:: ds 3
+wEXPBarKeepFullFlag:: ds1
 
 wLuckySlotHiddenObjectIndex:: ; cd05
 
@@ -1888,6 +1894,8 @@ wTrainerClass:: ; d030
 
 wTrainerPicPointer:: ; d032
 	ds 2
+	
+wTempLevel::
 	ds 1
 
 wTempMoveNameBuffer:: ; d035
@@ -2346,6 +2354,8 @@ wMonHGrowthRate:: ; d0ca
 wMonHLearnset:: ; d0cb
 ; bit field
 	flag_array 50 + 5
+	
+wMonHPicBank::
 	ds 1
 
 wSavedTilesetType:: ; d0d3
@@ -2357,6 +2367,7 @@ wSavedTilesetType:: ; d0d3
 wDamage:: ; d0d6
 	ds 2
 
+wJumpKickDamageSave::
 	ds 2
 
 wRepelRemainingSteps:: ; d0da

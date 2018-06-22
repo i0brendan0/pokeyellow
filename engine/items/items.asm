@@ -265,11 +265,15 @@ ItemUseBall:
 ; Determine BallFactor. It's 8 for Great Balls and 12 for the others.
 	ld a,[wcf91]
 	cp GREAT_BALL
-	ld a,12
-	jr nz,.skip1
-	ld a,8
+	ld b,8
+	jr z,.skip1
+	cp ULTRA_BALL
+	ld b,4
+	jr z,.skip1
+	ld b,12
 
 .skip1
+	ld a,b
 ; Note that the results of all division operations are floored.
 
 ; Calculate (MaxHP * 255) / BallFactor.
@@ -1795,6 +1799,16 @@ ItemUsePokedoll:
 	ld a, [wIsInBattle]
 	dec a
 	jp nz, ItemUseNotTime
+	ld a, [wCurOpponent]
+	cp MAROWAK
+	jr nz, .canUse
+	ld a, [wCurEnemyLVL]
+	cp 30
+	jr nz, .canUse
+	ld a, [wPokemonTower6CurScript]
+	cp $4
+	jp z, ItemUseNotTime
+.canUse
 	ld a, $01
 	ld [wEscapedFromBattle], a
 	jp PrintItemUseTextAndRemoveItem
@@ -2129,7 +2143,9 @@ RodResponse:
 	dec a ; is there a bite?
 	jr nz, DoNotGenerateFishingEncounter
 	; if yes, store level and species data
-	ld a, 1
+	xor a
+	ld [wTrainerClass], a
+	inc a
 	ld [wMoveMissed], a
 	ld a, b ; level
 	ld [wCurEnemyLVL], a
@@ -2370,6 +2386,7 @@ ItemUsePPRestore:
 ; are used to count how many PP Ups have been used on the move. So, Max Ethers
 ; and Max Elixirs will not be detected as having no effect on a move with full
 ; PP if the move has had any PP Ups used on it.
+	and %00111111
 	cp b ; does current PP equal max PP?
 	ret z
 	jr .storeNewAmount

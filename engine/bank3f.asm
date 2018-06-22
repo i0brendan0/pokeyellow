@@ -11,7 +11,7 @@ Func_fe66e:
 	ret
 
 OfficerJennySprite:    INCBIN "gfx/sprites/officer_jenny.2bpp"
-PikachuSprite:         INCBIN "gfx/sprites/pikachu.2bpp"
+PikachuSprite:         INCBIN "gfx/sprites/snubbull.2bpp"
 SandshrewSprite:       INCBIN "gfx/sprites/sandshrew.2bpp"
 OddishSprite:          INCBIN "gfx/sprites/oddish.2bpp"
 BulbasaurSprite:       INCBIN "gfx/sprites/bulbasaur.2bpp"

@@ -64,6 +64,7 @@ OakSpeech:
 	ld a,[wd732]
 	bit 1,a ; possibly a debug mode bit
 	jp nz,.skipChoosingNames
+	callba SendOakPal
 	ld de,ProfOakPic
 	lb bc, Bank(ProfOakPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -72,7 +73,8 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld a,PIKACHU
+	callba SendPikachuPal
+	ld a,SNUBBULL
 	ld [wd0b5],a
 	ld [wcf91],a
 	call GetMonHeader
@@ -83,6 +85,7 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
+	callba SendPlayerPal
 	ld de,RedPicFront
 	lb bc, Bank(RedPicFront), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -92,6 +95,7 @@ OakSpeech:
 	call ChoosePlayerName
 	call GBFadeOutToWhite
 	call ClearScreen
+	call SendRivalPal
 	ld de,Rival1Pic
 	lb bc, Bank(Rival1Pic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -102,6 +106,7 @@ OakSpeech:
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen
+	callba SendPlayerPal
 	ld de,RedPicFront
 	lb bc, Bank(RedPicFront), $00
 	call IntroDisplayPicCenteredOrUpperRight
