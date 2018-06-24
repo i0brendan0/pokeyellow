@@ -3380,3 +3380,7 @@ INCLUDE "text/pokedex.asm"
 SECTION "Move Names", ROMX
 
 INCLUDE "text/move_names.asm"
+
+SECTION "Move Tutor Text", ROMX
+
+INCLUDE "text/maps/move_tutor.asm"

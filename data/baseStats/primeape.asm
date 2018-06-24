@@ -11,11 +11,11 @@ db 149 ; base exp yield
 INCBIN "pic/ymon/primeape.pic",0,1 ; 77, sprite dimensions
 dw PrimeapePicFront
 dw PrimeapePicBack
-; attacks known at lvl 0
-db SCRATCH
-db LEER
-db LOW_KICK
-db KARATE_CHOP
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 1,5,6,8

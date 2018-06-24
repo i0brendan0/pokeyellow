@@ -11,11 +11,11 @@ db 32 ; base exp yield
 INCBIN "pic/nmon/mikon.pic",0,1 ; 55, sprite dimensions
 dw MikonPicFront
 dw MikonPicBack
-; attacks known at lvl 0
-db EMBER
-db TAIL_WHIP
-db NO_MOVE
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db EXPCURVE_MEDFAST ; growth rate
 ; learnset
 	tmlearn  1, 2, 3, 4, 5, 6, 7, 8

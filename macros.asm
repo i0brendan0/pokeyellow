@@ -806,6 +806,8 @@ EAST_MAP_CONNECTION: MACRO
 	dw wOverworldMap + 7 + \2_WIDTH ; window (position of the upper left block after entering the map)
 ENDM
 
+m_tutor EQUS "tmlearn" ; works the same way, but renamed for clarity
+
 tmlearn: MACRO
 x = 0
 	rept _NARG

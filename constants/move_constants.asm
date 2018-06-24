@@ -165,10 +165,98 @@ const_value = 0
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
+	const STRUGGLE     ; a5
+	const METAL_CLAW   ; a6
+	const BULLET_PUNCH ; a7
+	const FLASH_CANNON ; a8
+	const IRON_TAIL    ; a9
+	const METEOR_MASH  ; aa
+	const CRUNCH       ; ab
+	const DARK_PULSE   ; ac
+	const FEINT_ATTACK ; ad
+	const NIGHT_SLASH  ; ae
+	const MOONBLAST    ; af
+	const DRAININGKISS ; b0
+	const DISARM_VOICE ; b1
+	const DAZZLINGLEAM ; b2
+	const DRACO_METEOR ; b3
+	const DRAGONBREATH ; b4
+	const DRAGON_CLAW  ; b5
+	const DRAGON_PULSE ; b6
+	const TWISTER      ; b7
+	const OUTRAGE      ; b8
+	const SHADOW_CLAW  ; b9
+	const STEEL_WING   ; ba
+	const IRON_DEFENSE ; bb
+	const AIR_SLASH    ; bc
+	const FIRE_FANG    ; bd
+	const FLARE_BLITZ  ; be
+	const BLAST_BURN   ; bf
+	const ICE_FANG     ; c0
+	const THUNDER_FANG ; c1
+	const WATER_PULSE  ; c2
+	const AQUA_TAIL    ; c3
+	const HYDRO_CANNON ; c4
+	const FRENZY_PLANT ; c5
+	const HONE_CLAWS   ; c6
+	const SHADOW_BALL  ; c7
+	const FLAME_WHEEL  ; c8
+	const MOONLIGHT    ; c9
+	const HEX          ; ca
+	const SHADOW_PUNCH ; cb
+	const AERIAL_ACE   ; cc
+	const ACROBATICS   ; cd
+	const AIR_CUTTER   ; ce
+	const ICY_WIND     ; cf
+	const ICE_SHARD    ; d0
+	const SHEER_COLD   ; d1
+	const ELECTRO_BALL ; d2
+	const NUZZLE       ; d3
+	const DISCHARGE    ; d4
+	const VOLT_TACKLE  ; d5
+	const MUDDY_WATER  ; d6
+	const WHIRLPOOL    ; d7
+	const GIGA_DRAIN   ; d8
+	const PETALBLIZARD ; d9
+	const LEAF_BLADE   ; da
+	const WOOD_HAMMER  ; db
+	const POISON_JAB   ; dc
+	const GUNK_SHOT    ; dd
+	const POISON_FANG  ; de
+	const SLUDGE_WAVE  ; df
+	const SILVER_WIND  ; e0
+	const BUG_BUZZ     ; e1
+	const MEGAHORN     ; e2
+	const X_SCISSOR    ; e3
+	const SIGNAL_BEAM  ; e4
+	const EARTH_POWER  ; e5
+	const MUD_SLAP     ; e6
+	const MUD_BOMB     ; e7
+	const EXTRASENSORY ; e8
+	const ZEN_HEADBUTT ; e9
+	const PSYCHO_CUT   ; ea
+	const HYPER_VOICE  ; eb
+	const EXTREMESPEED ; ec
+	const GIGA_IMPACT  ; ed
+	const POWER_GEM    ; ee
+	const ROCK_BLAST   ; ef
+	const ROCK_POLISH  ; f0
+	const ROCK_TOMB    ; f1
+	const DYNAMICPUNCH ; f2
+	const CIRCLE_THROW ; f3
+	const CROSS_CHOP   ; f4
+	const LOW_SWEEP    ; f5
+	const HURRICANE    ; f6
+	const BABYDOLLEYES ; f7
+	const BONE_RUSH    ; f8
+	const AEROBLAST    ; f9
+	const ANCIENTPOWER ; fa
+	const UNUSED_MOVE2 ; fb (Unused) 
+    const LUSTER_PURGE ; fc
+    const PSYSTRIKE    ; fd
 
-NUM_ATTACKS EQU const_value + -1
-
-	const STRUGGLE
+NUM_ATTACKS EQU const_value
+const_value = STRUGGLE + 1
 
 	; Moves do double duty as animation identifiers.
 

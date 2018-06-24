@@ -176,18 +176,15 @@ _AddPartyMon:
 	ld a, $60 ; twistedspoon in gen 2
 	ld [de], a
 .skipGivingTwistedSpoon
-	ld hl, wMonHMoves
-	ld a, [hli]
+	; blank moves first
+	xor a
 	inc de
 	push de
 	ld [de], a
-	ld a, [hli]
 	inc de
 	ld [de], a
-	ld a, [hli]
 	inc de
 	ld [de], a
-	ld a, [hli]
 	inc de
 	ld [de], a
 	push de

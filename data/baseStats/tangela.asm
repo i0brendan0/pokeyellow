@@ -11,11 +11,11 @@ db 166 ; base exp yield
 INCBIN "pic/ymon/tangela.pic",0,1 ; 66, sprite dimensions
 dw TangelaPicFront
 dw TangelaPicBack
-; attacks known at lvl 0
-db CONSTRICT
-db NO_MOVE
-db NO_MOVE
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 3,6,8

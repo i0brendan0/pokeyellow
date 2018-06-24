@@ -138,6 +138,7 @@ PalletTownScript4:
 	ld a, $FF ^ (A_BUTTON | B_BUTTON)
 	ld [wJoyIgnore], a
 	xor a
+	ld [wTrainerClass], a
 	ld [wListScrollOffset], a
 	ld a, BATTLE_TYPE_PIKACHU
 	ld [wBattleType], a

@@ -11,11 +11,11 @@ db 94 ; base exp yield
 INCBIN "pic/ymon/farfetchd.pic",0,1 ; 66, sprite dimensions
 dw FarfetchdPicFront
 dw FarfetchdPicBack
-; attacks known at lvl 0
-db PECK
-db SAND_ATTACK
-db NO_MOVE
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 2,3,4,6,8

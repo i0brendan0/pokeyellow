@@ -11,11 +11,11 @@ db 204 ; base exp yield
 INCBIN "pic/nmon/crobat.pic",0,1 ; 55, sprite dimensions
 dw CrobatPicFront
 dw CrobatPicBack
-; attacks known at lvl 0
-db SCREECH
-db LEECH_LIFE
-db SUPERSONIC
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db EXPCURVE_MEDFAST ; growth rate
 ; learnset
 	tmlearn  1, 2, 3, 4, 5, 6, 7, 8

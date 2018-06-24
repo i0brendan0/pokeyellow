@@ -98,6 +98,7 @@ TryDoWildEncounter:
 	ret
 .willEncounter
 	xor a
+	ld [wTrainerNo], a
 	ret
 
 WildMonEncounterSlotChances:

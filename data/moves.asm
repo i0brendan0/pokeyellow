@@ -176,3 +176,91 @@ MoveEnd:
 	move SLASH,        NO_ADDITIONAL_EFFECT,        70, NORMAL,   100, 20
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,   100, 10
 	move STRUGGLE,     RECOIL_EFFECT,               50, UNKNOWN_T,100, 10
+	move SLASH,        NO_ADDITIONAL_EFFECT,        50, STEEL,     95, 35 ; Metal Claw
+	move COMET_PUNCH,  NO_ADDITIONAL_EFFECT,        40, STEEL,    100, 30 ; Bullet Punch
+	move AURORA_BEAM,  SPECIAL_DOWN_SIDE_EFFECT,    80, STEEL,    100, 10 ; Flash Cannon
+	move CUT,          DEFENSE_DOWN_SIDE_EFFECT,   100, STEEL,     75, 15 ; Iron Tail
+	move STRENGTH,     NO_ADDITIONAL_EFFECT,        90, STEEL,     90, 10 ; Meteor Mash
+	move BITE,         DEFENSE_DOWN_SIDE_EFFECT,    80, DARK,     100, 15 ; Crunch
+	move PSYCHIC_M,    FLINCH_SIDE_EFFECT1,         80, DARK,     100, 15 ; Dark Pulse
+	move QUICK_ATTACK, SWIFT_EFFECT,                60, DARK,     100, 20 ; Feint Attack
+	move CUT,          NO_ADDITIONAL_EFFECT,        70, DARK,     100, 15 ; Night Slash
+	move SEISMIC_TOSS, SPECIAL_DOWN_SIDE_EFFECT,    95, FAIRY,    100, 15 ; Moonblast
+	move LOVELY_KISS,  DRAIN_HP_EFFECT,             50, FAIRY,    100, 10 ; Draining Kiss
+	move SCREECH,      SWIFT_EFFECT,                40, FAIRY,    100, 15 ; Disarming Voice
+	move FLASH,        NO_ADDITIONAL_EFFECT,        80, FAIRY,    100, 10 ; Dazzling Gleam
+	move SEISMIC_TOSS, SPECIAL_DOWN_SIDE_EFFECT,   130, DRAGON,    90,  5 ; Draco Meteor
+	move FLAMETHROWER, PARALYZE_SIDE_EFFECT1,       60, DRAGON,   100, 20 ; Dragonbreath
+	move SLASH,        NO_ADDITIONAL_EFFECT,        80, DRAGON,   100, 15 ; Dragon Claw
+	move AURORA_BEAM,  NO_ADDITIONAL_EFFECT,        85, DRAGON,   100, 10 ; Dragon Pulse
+	move SONICBOOM,    FLINCH_SIDE_EFFECT1,         40, DRAGON,   100, 20 ; Twister
+	move RAGE,         THRASH_PETAL_DANCE_EFFECT,  120, DRAGON,   100, 10 ; Outrage
+	move SLASH,        NO_ADDITIONAL_EFFECT,        70, GHOST,    100, 15 ; Shadow Claw
+	move WING_ATTACK,  NO_ADDITIONAL_EFFECT,        70, STEEL,     90, 25 ; Steel Wing
+	move BARRIER,      DEFENSE_UP2_EFFECT,           0, STEEL,    100, 15 ; Iron Defense
+	move CUT,          FLINCH_SIDE_EFFECT2,         75, FLYING,    95, 15 ; Air Slash
+	move BITE,         FIRE_FANG_EFFECT,            65, FIRE,      95, 15 ; Fire Fang
+	move EMBER,        RECOIL_EFFECT,              120, FIRE,     100, 15 ; Flare Blitz
+	move FIRE_BLAST,   HYPER_BEAM_EFFECT,          150, FIRE,      90,  5 ; Blast Burn
+	move BITE,         ICE_FANG_EFFECT,             65, ICE,       95, 15 ; Ice Fang
+	move BITE,         THUNDER_FANG_EFFECT,         65, ELECTRIC,  95, 15 ; Thunder Fang
+	move BUBBLEBEAM,   CONFUSION_SIDE_EFFECT,       60, WATER,    100, 20 ; Water Pulse
+	move SURF,         NO_ADDITIONAL_EFFECT,        90, WATER,    100, 10 ; Aqua Tail
+	move AURORA_BEAM,  HYPER_BEAM_EFFECT,          150, WATER,     90,  5 ; Hydro Cannon
+	move VINE_WHIP,    HYPER_BEAM_EFFECT,          150, GRASS,     90,  5 ; Frenzy Plant
+	move SHARPEN,      HONE_CLAWS_EFFECT,            0, DARK,     100, 15 ; Hone Claws
+	move BARRAGE,      SPECIAL_DOWN_SIDE_EFFECT,    80, GHOST,    100, 15 ; Shadow Ball
+	move EMBER,        BURN_SIDE_EFFECT1,           60, FIRE,     100, 25 ; Flame Wheel
+	move FOCUS_ENERGY, HEAL_EFFECT,                  0, FAIRY,    100, 20 ; Moonlight
+	move PSYCHIC_M,    NO_ADDITIONAL_EFFECT,        65, GHOST,    100, 10 ; Hex
+	move MEGA_PUNCH,   SWIFT_EFFECT,                60, GHOST,    100, 20 ; Shadow Punch
+	move WING_ATTACK,  SWIFT_EFFECT,                60, FLYING,   100, 20 ; Aerial Ace
+	move QUICK_ATTACK, NO_ADDITIONAL_EFFECT,       110, FLYING,   100, 15 ; Acrobatics
+	move CUT,          NO_ADDITIONAL_EFFECT,        60, FLYING,   100, 25 ; Air Cutter
+	move GUST,         SPEED_DOWN_SIDE_EFFECT,      55, ICE,       95, 15 ; Icy Wind
+	move BLIZZARD,     NO_ADDITIONAL_EFFECT,        40, ICE,      100, 30 ; Ice Shard
+	move BLIZZARD,     OHKO_EFFECT,                  1, ICE,       30,  5 ; Sheer Cold
+	move THUNDER,      NO_ADDITIONAL_EFFECT,        80, ELECTRIC, 100, 10 ; Electro Ball
+	move TACKLE,       NUZZLE_EFFECT,               20, ELECTRIC, 100, 20 ; Nuzzle
+	move THUNDERBOLT,  PARALYZE_SIDE_EFFECT1,       80, ELECTRIC, 100, 15 ; Discharge
+	move QUICK_ATTACK, VOLT_TACKLE_EFFECT,         120, ELECTRIC, 100, 15 ; Volt Tackle
+	move SURF,         ACCURACY_DOWN_SIDE_EFFECT,   90, WATER,     85, 10 ; Muddy Water
+	move GUST,         TRAPPING_EFFECT,             35, WATER,     85, 15 ; Whirlpool
+	move MEGA_DRAIN,   DRAIN_HP_EFFECT,             75, GRASS,    100, 10 ; Giga Drain
+	move PETAL_DANCE,  NO_ADDITIONAL_EFFECT,        90, GRASS,    100, 15 ; Petal Blizzard
+	move CUT,          NO_ADDITIONAL_EFFECT,        90, GRASS,    100, 15 ; Leaf Blade
+	move ROCK_THROW,   RECOIL_EFFECT,              120, GRASS,    100, 15 ; Wood Hammer
+	move COMET_PUNCH,  POISON_SIDE_EFFECT2,         80, POISON,   100, 20 ; Poison Jab
+	move SLUDGE,       POISON_SIDE_EFFECT2,        120, POISON,    80,  5 ; Gunk Shot
+	move BITE,         POISON_FANG_EFFECT,          50, POISON,   100, 15 ; Poison Fang
+	move SURF,         POISON_SIDE_EFFECT1,         95, POISON,   100, 10 ; Sludge Wave
+	move MIST,         NO_ADDITIONAL_EFFECT,        60, BUG,      100,  5 ; Silver Wind
+	move SUPERSONIC,   SPECIAL_DOWN_SIDE_EFFECT,    90, BUG,      100, 10 ; Bug Buzz
+	move HORN_ATTACK,  NO_ADDITIONAL_EFFECT,       120, BUG,       85, 10 ; Megahorn
+	move CUT,          NO_ADDITIONAL_EFFECT,        80, BUG,      100, 15 ; X-Scissor
+	move AURORA_BEAM,  CONFUSION_SIDE_EFFECT,       75, BUG,      100, 15 ; Signal Beam
+	move EARTHQUAKE,   SPECIAL_DOWN_SIDE_EFFECT,    90, GROUND,   100, 10 ; Earth Power
+	move SAND_ATTACK,  ACCURACY_DOWN_SIDE_EFFECT,   20, GROUND,   100, 10 ; Mud-Slap
+	move SAND_ATTACK,  ACCURACY_DOWN_SIDE_EFFECT,   65, GROUND,    85, 10 ; Mud Bomb
+	move CONFUSION,    FLINCH_SIDE_EFFECT1,         80, PSYCHIC,  100, 20 ; Extrasensory
+	move HEADBUTT,     FLINCH_SIDE_EFFECT2,         80, PSYCHIC,  100, 15 ; Zen Headbutt
+	move CUT,          NO_ADDITIONAL_EFFECT,        70, PSYCHIC,  100, 20 ; Psycho Cut
+	move SING,         NO_ADDITIONAL_EFFECT,        90, NORMAL,   100, 10 ; Hyper Voice
+	move QUICK_ATTACK, NO_ADDITIONAL_EFFECT,        80, NORMAL,   100,  5 ; Extremespeed
+	move SLAM,         HYPER_BEAM_EFFECT,          150, NORMAL,    90,  5 ; Giga Impact
+	move KINESIS,      NO_ADDITIONAL_EFFECT,        80, ROCK,     100, 20 ; Power Gem
+	move BARRAGE,      TWO_TO_FIVE_ATTACKS_EFFECT,  25, ROCK,      95, 10 ; Rock Blast
+	move HARDEN,       SPEED_UP2_EFFECT,             0, ROCK,     100, 20 ; Rock Polish
+	move ROCK_SLIDE,   SPEED_DOWN_SIDE_EFFECT,      60, ROCK,      95, 15 ; Rock Tomb
+	move MEGA_PUNCH,   CONFUSION_SIDE_EFFECT,      100, FIGHTING,  50,  5 ; Dynamicpunch
+	move COUNTER,      NO_ADDITIONAL_EFFECT,        60, FIGHTING,  90, 10 ; Circle Throw
+	move KARATE_CHOP,  NO_ADDITIONAL_EFFECT,       100, FIGHTING,  85,  5 ; Cross Chop
+	move MEGA_KICK,    SPEED_DOWN_SIDE_EFFECT,      65, FIGHTING, 100, 20 ; Low Sweep
+	move SONICBOOM,    CONFUSION_SIDE_EFFECT,      110, FLYING,    85, 10 ; Hurricane
+	move TAIL_WHIP,    ATTACK_DOWN1_EFFECT,          0, FAIRY,    100, 30 ; Baby Doll Eyes
+	move BONEMERANG,   TWO_TO_FIVE_ATTACKS_EFFECT,  25, GROUND,    90, 10 ; Bone Rush
+	move AURORA_BEAM,  NO_ADDITIONAL_EFFECT,       100, FLYING,   100,  5 ; Aeroblast
+	move ROCK_THROW,   NO_ADDITIONAL_EFFECT,        60, ROCK,     100,  5 ; Ancient Power
+	move SURF,         CHARGE_EFFECT,               80, WATER,    100, 10 ; Dive (Unused)
+    move FLASH,        SPECIAL_DOWN_SIDE_EFFECT,    70, PSYCHIC,  100,  5 ; Luster Purge
+    move KINESIS,      NO_ADDITIONAL_EFFECT,       100, PSYCHIC,  100, 10 ; Psystrike

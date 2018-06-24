@@ -11,11 +11,11 @@ db 78 ; base exp yield
 INCBIN "pic/nmon/bairina.pic",0,1 ; 55, sprite dimensions
 dw BairinaPicFront
 dw BairinaPicBack
-; attacks known at lvl 0
-db CONFUSION
-db NO_MOVE
-db NO_MOVE
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db EXPCURVE_MEDFAST ; growth rate
 ; learnset
 	tmlearn  1, 2, 3, 4, 5, 6, 7, 8

@@ -2050,6 +2050,10 @@ INCLUDE "engine/unknown_ea3ea.asm"
 
 INCLUDE "engine/overworld/npc_movement_2.asm"
 
+SECTION "Move Tutor Script", ROMX
+
+INCLUDE "scripts/move_tutor.asm"
+
 SECTION "bank3C", ROMX
 
 INCLUDE "engine/bank3c.asm"

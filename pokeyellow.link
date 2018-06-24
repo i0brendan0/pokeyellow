@@ -197,8 +197,9 @@ ROMX $39
 ROMX $3A
   "bank3A"
 
-; ROMX $3B
-;   "bank3B"
+ROMX $3B
+  "Move Tutor Script"
+  "Move Tutor Text"
 
 ROMX $3C
   "bank3C"

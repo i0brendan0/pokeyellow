@@ -11,11 +11,11 @@ db 87 ; base exp yield
 INCBIN "pic/ymon/cubone.pic",0,1 ; 55, sprite dimensions
 dw CubonePicFront
 dw CubonePicBack
-; attacks known at lvl 0
-db GROWL
-db 0
-db 0
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 1,5,6,8

@@ -11,11 +11,11 @@ db 96 ; base exp yield
 INCBIN "pic/ymon/doduo.pic",0,1 ; 55, sprite dimensions
 dw DoduoPicFront
 dw DoduoPicBack
-; attacks known at lvl 0
-db PECK
-db 0
-db 0
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 4,6,8

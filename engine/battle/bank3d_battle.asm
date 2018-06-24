@@ -29,9 +29,11 @@ asm_f601d:
 	push af
 	res 1, [hl]
 	call InitBattleVariables
+	ld a, [wTrainerNo]
+	and a
+	jp c, InitWildBattle
 	ld a, [wEnemyMonSpecies2]
 	sub $c8
-	jp c, InitWildBattle
 	ld [wTrainerClass], a
 	call GetTrainerInformation
 	callab ReadTrainer

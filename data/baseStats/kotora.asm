@@ -11,11 +11,11 @@ db 72 ; base exp yield
 INCBIN "pic/nmon/kotora.pic",0,1 ; 55, sprite dimensions
 dw KotoraPicFront
 dw KotoraPicBack
-; attacks known at lvl 0
-db THUNDERSHOCK
-db NO_MOVE
-db NO_MOVE
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db EXPCURVE_MEDSLOW ; growth rate
 ; learnset
 	tmlearn  1, 2, 3, 4, 5, 6, 7, 8

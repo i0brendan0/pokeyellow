@@ -39,7 +39,7 @@ const_value = 0
 	const SLEEP_EFFECT               ; $20
 	const POISON_SIDE_EFFECT2        ; $21
 	const BURN_SIDE_EFFECT2          ; $22
-	const UNUSED_EFFECT_23           ; $23
+	const FREEZE_SIDE_EFFECT2        ; $23
 	const PARALYZE_SIDE_EFFECT2      ; $24
 	const FLINCH_SIDE_EFFECT2        ; $25
 	const OHKO_EFFECT                ; $26 moves like Horn Drill
@@ -76,13 +76,13 @@ const_value = 0
 	const DEFENSE_DOWN_SIDE_EFFECT   ; $45
 	const SPEED_DOWN_SIDE_EFFECT     ; $46
 	const SPECIAL_DOWN_SIDE_EFFECT   ; $47
-	const UNUSED_EFFECT_48           ; $48
-	const UNUSED_EFFECT_49           ; $49
+	const ACCURACY_DOWN_SIDE_EFFECT  ; $48
+	const EVASION_DOWN_SIDE_EFFECT   ; $49
 	const UNUSED_EFFECT_4A           ; $4A
 	const UNUSED_EFFECT_4B           ; $4B
 	const CONFUSION_SIDE_EFFECT      ; $4C
 	const TWINEEDLE_EFFECT           ; $4D
-	const UNUSED_EFFECT_4E           ; $4E
+	const NUZZLE_EFFECT              ; $4E
 	const SUBSTITUTE_EFFECT          ; $4F
 	const HYPER_BEAM_EFFECT          ; $50
 	const RAGE_EFFECT                ; $51
@@ -91,6 +91,14 @@ const_value = 0
 	const LEECH_SEED_EFFECT          ; $54
 	const SPLASH_EFFECT              ; $55
 	const DISABLE_EFFECT             ; $56
+	const FIRE_FANG_EFFECT           ; $57
+	const ICE_FANG_EFFECT            ; $58
+	const THUNDER_FANG_EFFECT        ; $59
+	const VOLT_TACKLE_EFFECT         ; $5A
+	const POISON_FANG_EFFECT         ; $5B
+	const UNUSED_EFFECT_1            ; $5C
+	const GROWTH_EFFECT              ; $5D
+	const HONE_CLAWS_EFFECT          ; $5E
 
 ; fixed damage constants
 SONICBOOM_DAMAGE   EQU 20

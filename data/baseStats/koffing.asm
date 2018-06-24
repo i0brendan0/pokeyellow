@@ -11,11 +11,11 @@ db 114 ; base exp yield
 INCBIN "pic/ymon/koffing.pic",0,1 ; 66, sprite dimensions
 dw KoffingPicFront
 dw KoffingPicBack
-; attacks known at lvl 0
-db TACKLE
-db SMOG
-db 0
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 6

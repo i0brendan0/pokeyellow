@@ -1768,43 +1768,43 @@ _HannecoDexEntry::
 	dex
 	
 _PopocoDexEntry::
-	text ""
-	next ""
-	next ""
+	text "It skips around on"
+	next "its strong tail."
+	next "It can spit seeds"
 	
-	page ""
-	next ""
-	next ""
+	page "to defend itself,"
+	next "but doesn't like"
+	next "to hurt anyone."
 	dex
 	
 _WatacoDexEntry::
-	text ""
-	next ""
-	next ""
+	text "The cotton from"
+	next "its tuft is prized"
+	next "for its softness"
 	
-	page ""
-	next ""
-	next ""
+	page "and strength. It"
+	next "enjoys having the"
+	next "fiber combed off."
 	dex
 	
 _KotoraDexEntry::
-	text ""
-	next ""
-	next ""
+	text "A distant cousin"
+	next "of GROWLITHE from"
+	next "the far east. It"
 	
-	page ""
-	next ""
-	next ""
+	page "generates large"
+	next "charges from the"
+	next "bolt on its chest."
 	dex
 	
 _RaitoraDexEntry::
-	text ""
-	next ""
-	next ""
+	text "Looks vicious, but"
+	next "very gentle. Its"
+	next "coat is tingly to"
 	
-	page ""
-	next ""
-	next ""
+	page "touch. When angry,"
+	next "it can generate a"
+	next "gigavolt of power."
 	dex
 	
 _WolfmanDexEntry::
@@ -1847,14 +1847,14 @@ _NoctowlDexEntry:: ;------------------------------------------------------------
 	next "being detected."
 	dex
 	
-_MantineDexEntry:: ;---------------------------------------------------------------------
-	text "Swimming freely in"
-	next "open seas, it may"
-	next "fly out of the"
+_MantineDexEntry::
+	text "It glides ofer the"
+	next "sea for miles."
+	next "Their lighter side"
 	
-	page "water and over the"
-	next "waves if it builds"
-	next "up enough speed."
+	page "faces up when they"
+	next "go north, and lost"
+	next "sailors follow."
 	dex
 	
 _SnubbullDexEntry::

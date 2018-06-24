@@ -11,11 +11,11 @@ db 111 ; base exp yield
 INCBIN "pic/nmon/raitora.pic",0,1 ; 55, sprite dimensions
 dw RaitoraPicFront
 dw RaitoraPicBack
-; attacks known at lvl 0
-db THUNDERSHOCK
-db NO_MOVE
-db NO_MOVE
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db EXPCURVE_MEDSLOW ; growth rate
 ; learnset
 	tmlearn  1, 2, 3, 4, 5, 6, 7, 8

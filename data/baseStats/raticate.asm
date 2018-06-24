@@ -11,11 +11,11 @@ db 116 ; base exp yield
 INCBIN "pic/ymon/raticate.pic",0,1 ; 66, sprite dimensions
 dw RaticatePicFront
 dw RaticatePicBack
-; attacks known at lvl 0
-db TACKLE
-db TAIL_WHIP
-db QUICK_ATTACK
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 6,8

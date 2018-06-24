@@ -2144,7 +2144,7 @@ RodResponse:
 	jr nz, DoNotGenerateFishingEncounter
 	; if yes, store level and species data
 	xor a
-	ld [wTrainerClass], a
+	ld [wTrainerNo], a
 	inc a
 	ld [wMoveMissed], a
 	ld a, b ; level

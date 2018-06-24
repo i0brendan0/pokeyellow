@@ -11,11 +11,11 @@ db 135 ; base exp yield
 INCBIN "pic/ymon/rhyhorn.pic",0,1 ; 77, sprite dimensions
 dw RhyhornPicFront
 dw RhyhornPicBack
-; attacks known at lvl 0
-db HORN_ATTACK
-db 0
-db 0
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 5 ; growth rate
 ; learnset
 	tmlearn 6,7,8

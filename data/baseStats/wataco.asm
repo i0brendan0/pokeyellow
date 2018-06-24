@@ -11,11 +11,11 @@ db 176 ; base exp yield
 INCBIN "pic/nmon/wataco.pic",0,1 ; 55, sprite dimensions
 dw WatacoPicFront
 dw WatacoPicBack
-; attacks known at lvl 0
-db SPLASH
-db TAIL_WHIP
-db SCRATCH
-db NO_MOVE
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db EXPCURVE_MEDSLOW ; growth rate
 ; learnset
 	tmlearn  1, 2, 3, 4, 5, 6, 7, 8

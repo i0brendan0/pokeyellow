@@ -11,11 +11,11 @@ db 117 ; base exp yield
 INCBIN "pic/ymon/nidorina.pic",0,1 ; 66, sprite dimensions
 dw NidorinaPicFront
 dw NidorinaPicBack
-; attacks known at lvl 0
-db GROWL
-db TACKLE
-db SCRATCH
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 3 ; growth rate
 ; learnset
 	tmlearn 6,7,8

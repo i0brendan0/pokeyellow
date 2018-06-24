@@ -11,11 +11,11 @@ db 98 ; base exp yield
 INCBIN "pic/ymon/exeggcute.pic",0,1 ; 77, sprite dimensions
 dw ExeggcutePicFront
 dw ExeggcutePicBack
-; attacks known at lvl 0
-db BARRAGE
-db HYPNOSIS
-db 0
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 5 ; growth rate
 ; learnset
 	tmlearn 6

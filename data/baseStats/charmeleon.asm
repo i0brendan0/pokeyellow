@@ -11,11 +11,11 @@ db 142 ; base exp yield
 INCBIN "pic/ymon/charmeleon.pic",0,1 ; 66, sprite dimensions
 dw CharmeleonPicFront
 dw CharmeleonPicBack
-; attacks known at lvl 0
-db SCRATCH
-db GROWL
-db EMBER
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 3 ; growth rate
 ; learnset
 	tmlearn 1,3,5,6,8

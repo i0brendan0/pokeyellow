@@ -11,11 +11,11 @@ db 198 ; base exp yield
 INCBIN "pic/ymon/flareon.pic",0,1 ; 66, sprite dimensions
 dw FlareonPicFront
 dw FlareonPicBack
-; attacks known at lvl 0
-db TACKLE
-db TAIL_WHIP
-db QUICK_ATTACK
-db EMBER
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 0 ; growth rate
 ; learnset
 	tmlearn 6,8

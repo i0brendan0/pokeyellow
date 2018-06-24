@@ -11,11 +11,11 @@ db 95 ; base exp yield
 INCBIN "pic/ymon/gastly.pic",0,1 ; 77, sprite dimensions
 dw GastlyPicFront
 dw GastlyPicBack
-; attacks known at lvl 0
-db LICK
-db CONFUSE_RAY
-db NIGHT_SHADE
-db 0
+; move tutor compatibility flags
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
+	m_tutor 0
 db 3 ; growth rate
 ; learnset
 	tmlearn 6

@@ -467,11 +467,23 @@ MainInBattleLoop:
 	ld a, [wPlayerSelectedMove]
 	cp EXTREMESPEED
 	jr z, .PriorityMoveUsed
+	cp BABYDOLLEYES
+	jr z, .PriorityMoveUsed
+    cp ICE_SHARD
+    jr z, .PriorityMoveUsed
+    cp BULLET_PUNCH
+    jr z, .PriorityMoveUsed
 	cp QUICK_ATTACK
 	jr nz, .playerDidNotUsePriorityMove
 .PriorityMoveUsed
 	ld a, [wEnemySelectedMove]
 	cp EXTREMESPEED
+	jr z, .compareSpeed
+	cp BABYDOLLEYES
+	jr z, .compareSpeed
+    cp ICE_SHARD
+	jr z, .compareSpeed
+    cp BULLET_PUNCH
 	jr z, .compareSpeed
 	cp QUICK_ATTACK
 	jr z, .compareSpeed  ; if both used Quick Attack
@@ -479,6 +491,12 @@ MainInBattleLoop:
 .playerDidNotUsePriorityMove
 	ld a, [wEnemySelectedMove]
 	cp EXTREMESPEED
+	jr z, .enemyMovesFirst
+	cp BABYDOLLEYES
+	jr z, .enemyMovesFirst
+    cp ICE_SHARD
+	jr z, .enemyMovesFirst
+    cp BULLET_PUNCH
 	jr z, .enemyMovesFirst
 	cp QUICK_ATTACK
 	jr z, .enemyMovesFirst ; if enemy used Quick Attack and player didn't
@@ -3591,6 +3609,12 @@ CheckPlayerStatusConditions:
 .FrozenCheck
 	bit FRZ,[hl] ; frozen?
 	jr z,.HeldInPlaceCheck
+	; Adding checks for Flame Wheel and Flare Blitz to thaw you
+	ld a, [wPlayerSelectedMove]
+	cp FLAME_WHEEL
+	jr z, .defrostMon
+	cp FLARE_BLITZ
+	jr z, .defrostMon
 	; Adding chance to defrost naturally
 	call BattleRandom
 	cp $19
@@ -4440,6 +4464,8 @@ GetDamageVarsForPlayerAttack:
 	ld hl, wDamage ; damage to eventually inflict, initialise to zero
 	ldi [hl], a
 	ld [hl], a
+	call CheckForHex
+	call CheckForElectroBall
 	ld hl, wPlayerMovePower
 	ld a, [hli]
 	and a
@@ -4566,6 +4592,8 @@ GetDamageVarsForEnemyAttack:
 	xor a
 	ld [hli], a
 	ld [hl], a
+	call CheckForHex
+	call CheckForElectroBall
 	ld hl, wEnemyMovePower
 	ld a, [hli]
 	ld d, a ; d = move power
@@ -6196,6 +6224,12 @@ CheckEnemyStatusConditions:
 .checkIfFrozen
 	bit FRZ, [hl]
 	jr z, .checkIfTrapped
+	; Add check for Flame Wheel and Flare Blitz
+	ld a, [wEnemySelectedMove]
+	cp FLAME_WHEEL
+	jr z, .defrostMon
+	cp FLARE_BLITZ
+	jr z, .defrostMon
 	; Add chance to defrost naturally
 	call BattleRandom
 	cp $19
@@ -6591,18 +6625,14 @@ LoadEnemyMonData:
 	call CopyData
 	jr .loadMovePPs
 .copyStandardMoves
-; for a wild mon, first copy default moves from the mon header
-	ld hl, wMonHMoves
-	ld a, [hli]
+; for a wild mon, first clear the moves before copying
+	xor a
 	ld [de], a
 	inc de
-	ld a, [hli]
 	ld [de], a
 	inc de
-	ld a, [hli]
 	ld [de], a
 	inc de
-	ld a, [hl]
 	ld [de], a
 	dec de
 	dec de
@@ -7192,13 +7222,13 @@ MoveEffectPointerTable:
 	 dw SwitchAndTeleportEffect   ; SWITCH_AND_TELEPORT_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWO_TO_FIVE_ATTACKS_EFFECT
 	 dw TwoToFiveAttacksEffect    ; unused effect
-	 dw FlinchSideEffect           ; FLINCH_SIDE_EFFECT1
+	 dw FlinchSideEffect          ; FLINCH_SIDE_EFFECT1
 	 dw SleepEffect               ; SLEEP_EFFECT
 	 dw PoisonEffect              ; POISON_SIDE_EFFECT2
 	 dw FreezeBurnParalyzeEffect  ; BURN_SIDE_EFFECT2
-	 dw FreezeBurnParalyzeEffect  ; unused effect
+	 dw FreezeBurnParalyzeEffect  ; FREEZE_SIDE_EFFECT2
 	 dw FreezeBurnParalyzeEffect  ; PARALYZE_SIDE_EFFECT2
-	 dw FlinchSideEffect           ; FLINCH_SIDE_EFFECT2
+	 dw FlinchSideEffect          ; FLINCH_SIDE_EFFECT2
 	 dw OneHitKOEffect            ; OHKO_EFFECT
 	 dw ChargeEffect              ; CHARGE_EFFECT
 	 dw $0000                     ; SUPER_FANG_EFFECT
@@ -7233,13 +7263,13 @@ MoveEffectPointerTable:
 	 dw StatModifierDownEffect    ; DEFENSE_DOWN_SIDE_EFFECT
 	 dw StatModifierDownEffect    ; SPEED_DOWN_SIDE_EFFECT
 	 dw StatModifierDownEffect    ; SPECIAL_DOWN_SIDE_EFFECT
-	 dw StatModifierDownEffect    ; unused effect
-	 dw StatModifierDownEffect    ; unused effect
+	 dw StatModifierDownEffect    ; ACCURACY_DOWN_SIDE_EFFECT
+	 dw StatModifierDownEffect    ; EVASION_DOWN_SIDE_EFFECT
 	 dw StatModifierDownEffect    ; unused effect
 	 dw StatModifierDownEffect    ; unused effect
 	 dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWINEEDLE_EFFECT
-	 dw $0000                     ; unused effect
+	 dw ParalyzeEffect            ; NUZZLE_EFFECT
 	 dw SubstituteEffect          ; SUBSTITUTE_EFFECT
 	 dw HyperBeamEffect           ; HYPER_BEAM_EFFECT
 	 dw RageEffect                ; RAGE_EFFECT
@@ -7248,7 +7278,14 @@ MoveEffectPointerTable:
 	 dw LeechSeedEffect           ; LEECH_SEED_EFFECT
 	 dw SplashEffect              ; SPLASH_EFFECT
 	 dw DisableEffect             ; DISABLE_EFFECT
-
+	 dw FangAttacks               ; FIRE_FANG_EFFECT
+	 dw FangAttacks               ; ICE_FANG_EFFECT
+	 dw FangAttacks               ; THUNDER_FANG_EFFECT
+	 dw VoltTackleEffect          ; VOLT_TACKLE_EFFECT
+	 dw PoisonEffect              ; POISON_FANG_EFFECT
+	 dw $0000                     ; SUCKER_PUNCH_EFFECT
+	 dw GrowthEffect              ; GROWTH_EFFECT
+	 dw HoneClawsEffect           ; HONE_CLAWS_EFFECT
 SleepEffect:
 	ld de, wEnemyMonStatus
 	ld bc, wEnemyBattleStatus2
@@ -7330,6 +7367,9 @@ PoisonEffect:
 	cp POISON_SIDE_EFFECT2
 	ld b, $67 ; ~40% chance of poisoning
 	jr z, .sideEffectTest
+	cp POISON_FANG_EFFECT
+	ld b, $67 ; ~40% chance of poisoning
+	jr z, .sideEffectTest
 	push hl
 	push de
 	call MoveHitTest ; apply accuracy tests
@@ -7359,8 +7399,11 @@ PoisonEffect:
 	ld hl, wEnemyBattleStatus3
 	ld de, wEnemyToxicCounter
 .ok
+	cp BITE ; Animation ID, not Move ID. Poison Fang uses Bite's animation.
+	jr z, .badlyPoison
 	cp TOXIC
 	jr nz, .normalPoison ; done if move is not Toxic
+.badlyPoison
 	set BadlyPoisoned, [hl] ; else set Toxic battstatus
 	xor a
 	ld [de], a
@@ -7451,6 +7494,13 @@ FreezeBurnParalyzeEffect:
 	cp a, PARALYZE_SIDE_EFFECT1 + 1 ; 10% status effects are 04, 05, 06 so 07 will set carry for those
 	ld b, $1a ; 0x1A/0x100 or 26/256 = 10.2%~ chance
 	jr c, .next1 ; branch ahead if this is a 10% chance effect..
+	cp PARALYZE_SIDE_EFFECT2 + 1
+	jr c, .effect2
+	; otherwise, it's a fang effect
+	sub a, $53 ; map to the other effects
+	ld b, $1a
+	jr .next1
+.effect2
 	ld b, $4d ; else use 0x4D/0x100 or 77/256 = 30.1%~ chance
 	sub a, $1e ; subtract $1E to map to equivalent 10% chance effects
 .next1
@@ -7500,22 +7550,19 @@ FreezeBurnParalyzeEffect:
 	cp b
 	ret z
 	ld a, [wEnemyMoveEffect]
-	cp UNUSED_EFFECT_23 ; more stadium stuff
-	jr nz, .asm_3f341
-	ld a, [wUnknownSerialFlag_d499]
-	and a
-	ld a, FREEZE_SIDE_EFFECT
-	ld b, $4d ; else use 0x4D/0x100 or 77/256 = 30.1%~ chance
-	jr z, .next2
-	ld b, $1a ; 0x1A/0x100 or 26/256 = 10.2%~ chance
-	jr .next2
-.asm_3f341
-	cp a, PARALYZE_SIDE_EFFECT1 + 1
+	cp a, PARALYZE_SIDE_EFFECT1 + 1 ; 10% status effects are 04, 05, 06 so 07 will set carry for those
+	ld b, $1a       ;[1A-1]/100 or [26-1]/256 = 9.8%~ chance
+	jr c, .next1  ;branch ahead if this is a 10% chance effect..
+	cp PARALYZE_SIDE_EFFECT2 + 1
+	jr c, .effect2
+	; otherwise, it's a fang effect
+	sub a, $53 ; map to the other effects
 	ld b, $1a
-	jr c, .next2
-	ld b, $4d
-	sub a, $1e
-.next2
+	jr .next1
+.effect2
+	ld b, $4d       ;use [4D-1]/100 or [76-1]/256 = 29.7%~ chance
+	sub a, $1e      ;subtract $1E to map to equivalent 10% chance effects
+.next1
 	push af
 	call BattleRandom
 	cp b
@@ -8954,3 +9001,110 @@ BattleMonPartyAttr:
 	ld bc, wPartyMon2 - wPartyMon1
 	jp AddNTimes
 	
+FangAttacks:
+	call FlinchSideEffect
+	jp FreezeBurnParalyzeEffect
+	
+VoltTackleEffect:
+	call RecoilEffect
+	jp FreezeBurnParalyzeEffect
+	
+GrowthEffect:
+	ld a, [H_WHOSETURN]
+	and a
+	ld a, SPECIAL_UP1_EFFECT
+	jr z, .notEnemyTurn
+; Enemy's turn
+	ld [wEnemyMoveEffect], a
+	call StatModifierUpEffect
+	ld a, ATTACK_UP1_EFFECT
+	ld [wEnemyMoveEffect], a
+	jp StatModifierUpEffect
+.notEnemyTurn
+	ld [wPlayerMoveEffect], a
+	call StatModifierUpEffect
+	ld a, ATTACK_UP1_EFFECT
+	ld [wPlayerMoveEffect], a
+	jp StatModifierUpEffect
+	
+HoneClawsEffect:
+	ld a, [H_WHOSETURN]
+	and a
+	ld a, ATTACK_UP1_EFFECT
+	jr z, .notEnemyTurn
+; Enemy's turn
+	ld [wEnemyMoveEffect], a
+	call StatModifierUpEffect
+	ld a, ACCURACY_UP1_EFFECT
+	ld [wEnemyMoveEffect], a
+	jp StatModifierUpEffect
+.notEnemyTurn
+	ld [wPlayerMoveEffect], a
+	call StatModifierUpEffect
+	ld a, ACCURACY_UP1_EFFECT
+	ld [wPlayerMoveEffect], a
+	jp StatModifierUpEffect
+	
+CheckForHex:
+	ld a, [H_WHOSETURN]
+	and a
+	jr z, .notEnemyTurn
+	ld a,[wEnemySelectedMove]
+	cp HEX
+	ret nz
+	ld a,[wBattleMonStatus]
+	and a
+	ld hl,wEnemyMovePower
+	jr .finish
+.notEnemyTurn
+	ld a,[wPlayerSelectedMove]
+	cp HEX
+	ret nz
+	ld a,[wEnemyMonStatus]
+	and a
+	ld hl,wPlayerMovePower
+.finish
+	ld a,65
+	jr z, .skip
+	ld a,130
+.skip
+	ld [hl],a
+	ret
+	
+CheckForElectroBall:
+	ld a, [H_WHOSETURN]
+	and a
+	ld de, wBattleMonSpeed ; player speed value
+	ld hl, wEnemyMonSpeed ; enemy speed value
+	ld c, $2
+	jr z, .notEnemyTurn
+; Enemy's Turn
+	ld a, [wEnemySelectedMove]
+	cp ELECTRO_BALL
+	ret nz
+	call StringCmp ; compare speed values
+	ld hl,wEnemyMovePower
+	jr z, .equal
+	jr nc, .worse ; if player is faster
+	jr .better
+.notEnemyTurn
+; Player's turn
+	ld a, [wPlayerSelectedMove]
+	cp ELECTRO_BALL
+	ret nz
+	call StringCmp ; compare speed values
+	ld hl,wPlayerMovePower
+	jr z, .equal
+	jr nc, .better ; if player is faster
+.worse
+	ld a,60
+	jr .done
+.equal
+	ld a,80
+	jr .done
+.better
+	ld a,120
+; fall through
+.done
+	ld [hl],a
+	ret
