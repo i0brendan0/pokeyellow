@@ -157,7 +157,7 @@ ROMX $2D
   "Text 8"
 
 ROMX $2E
-  "Pokedex Text"
+  "Pokedex Text 1"
 
 ROMX $2f
   "Move Names"
@@ -225,6 +225,9 @@ ROMX $41
   
 ROMX $42
   "bank42"
+
+ROMX $43
+  "Pokedex Text 2"
 
 WRAM0
   "WRAM Bank 0"

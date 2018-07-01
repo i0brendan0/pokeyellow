@@ -3374,10 +3374,11 @@ _UsedCutText::
 	prompt
 
 
-SECTION "Pokedex Text", ROMX
+SECTION "Pokedex Text 1", ROMX
 
-INCLUDE "text/pokedex.asm"
+INCLUDE "text/pokedex_1.asm"
 
+SECTION "Pokedex Text 2", ROMX
 
 SECTION "Move Names", ROMX
 
