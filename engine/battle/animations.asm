@@ -3228,7 +3228,7 @@ PlayApplyingAttackSound:
 	ld c, SFX_SUPER_EFFECTIVE
 	jr z, .playSound
 	ld a, d
-	cp
+	cp %00000001
 	ld a, $50
 	ld b, $1
 	ld c, SFX_NOT_VERY_EFFECTIVE

@@ -118,6 +118,7 @@ RedrawPartyMenu_:
 	push hl
 	predef CanLearnTM ; check if the pokemon can learn the move
 	pop hl
+.showAbleNotAble
 	ld de,.ableToLearnMoveText
 	ld a,c
 	and a

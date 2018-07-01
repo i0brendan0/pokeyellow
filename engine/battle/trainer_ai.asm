@@ -558,7 +558,7 @@ BrendanAI:
 	ret nc
 	ld a,[wEnemyMonStatus]
 	and a
-	jr z .skip
+	jr z, .skip
 	jp AIUseFullHeal
 .skip
 	ld a, 5

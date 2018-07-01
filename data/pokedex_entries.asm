@@ -1337,7 +1337,7 @@ GrimblerDexEntry:
 	db "@"
 	
 SteelixDexEntry:
-	db "IRON SNAKE@
+	db "IRON SNAKE@"
 	db 30,2
 	dw 8818
 	TX_FAR _SteelixDexEntry

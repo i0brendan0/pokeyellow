@@ -492,6 +492,7 @@ wSurfingMinigameDataEnd:: ; c637
 
 	ds 177
 
+wTempMoveID::
 wTempPic:: ; c6e8
 wPrinterData:: ; c6e8
 wOverworldMap:: ; c6e8
@@ -986,7 +987,7 @@ wEXPBarPixelLength:: ds 1
 wEXPBarBaseEXP:: ds 3
 wEXPBarCurEXP:: ds 3
 wEXPBarNeededEXP:: ds 3
-wEXPBarKeepFullFlag:: ds1
+wEXPBarKeepFullFlag:: ds 1
 
 wLuckySlotHiddenObjectIndex:: ; cd05
 
@@ -2928,7 +2929,7 @@ wd475:: ds 1 ; d474
 
 wd47a:: ds 1 ; d479
 
-	ds 24
+	ds 14
 	
 wd492:: ds 1 ; d492
 	

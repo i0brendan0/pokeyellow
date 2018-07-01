@@ -14,10 +14,10 @@ MonPartyData:
 cur_sprite = -1
 sprite_def: MACRO
 	if cur_sprite < 0
-		cur_sprite = \1
+cur_sprite = \1
 	else
 		dn cur_sprite, \1
-		cur_sprite = -1
+cur_sprite = -1
 	endc
 ENDM
 

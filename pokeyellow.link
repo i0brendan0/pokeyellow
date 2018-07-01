@@ -228,6 +228,15 @@ ROMX $42
 
 ROMX $43
   "Pokedex Text 2"
+  
+ROMX $44
+  "bank44"
+  
+;ROMX $45
+;  "bank45"
+
+ROMX $46
+  "bank46"
 
 WRAM0
   "WRAM Bank 0"

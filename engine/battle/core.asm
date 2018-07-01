@@ -3338,9 +3338,6 @@ ExecutePlayerMove:
 	ld hl, wPlayerBattleStatus1
 	bit ChargingUp, [hl] ; charging up for attack
 	jr nz, PlayerCanExecuteChargingMove
-	ld hl, wExtraFlags
-	bit 2, [hl]
-	jr nz, CheckIfPlayerNeedsToChargeUp
 	call CheckForDisobedience
 	jp z, ExecutePlayerMoveDone
 
@@ -5510,7 +5507,6 @@ MetronomePickMove:
 	ld hl,wEnemySelectedMove
 ; loop to pick a random number in the range [1, $a5) to be the move used by Metronome
 .pickMoveLoop
-	ld hl,.skipmoves
 	call BattleRandom
 	and a
 	jr z,.pickMoveLoop
@@ -5521,7 +5517,7 @@ MetronomePickMove:
 	sub 2
 	cp a, STRUGGLE
 	jr z,.pickMoveLoop
-	cp a, METRONONE
+	cp a, METRONOME
 	jr z,.pickMoveLoop
 	cp a, COUNTER
 	jr z,.pickMoveLoop
@@ -6549,10 +6545,16 @@ LoadEnemyMonData:
 	jr nz, .storeDVs
 	ld a, [wIsInBattle]
 	cp $2 ; is it a trainer battle?
+	jr nz, .notTrainer
+	ld a, [wTrainerClass]
+	cp BRENDAN
 ; fixed DVs for trainer mon
 	ld a, $98
 	ld b, $88
-	jr z, .storeDVs
+	jr nz, .storeDVs
+	ld a, $FF
+	ld b, $FF
+.notTrainer
 ; random DVs for wild mon
 	call BattleRandom
 	ld b, a
@@ -7345,7 +7347,7 @@ PoisonEffect:
 	ld de, wEnemyMoveEffect
 .poisonEffect
 	call CheckTargetSubstitute
-	jr nz, .noEffect ; can't posion a substitute target
+	jp nz, .noEffect ; can't posion a substitute target
 	ld a, [hli]
 	ld b, a
 	and a
@@ -7480,9 +7482,6 @@ FreezeBurnParalyzeEffect:
 	ld a, [wEnemyMonType2]
 	cp b ; do target type 2 and move type match?
 	ret z  ; return if they match
-	ld a, [wPlayerMoveEffect]
-	cp UNUSED_EFFECT_23 ; more stadium stuff
-	jr nz, .asm_3f2c7
 	ld a, [wUnknownSerialFlag_d499]
 	and a
 	ld a, FREEZE_SIDE_EFFECT
@@ -7490,7 +7489,6 @@ FreezeBurnParalyzeEffect:
 	jr z, .next1
 	ld b, $1a ; 0x1A/0x100 or 26/256 = 10.2%~ chance
 	jr .next1
-.asm_3f2c7
 	cp a, PARALYZE_SIDE_EFFECT1 + 1 ; 10% status effects are 04, 05, 06 so 07 will set carry for those
 	ld b, $1a ; 0x1A/0x100 or 26/256 = 10.2%~ chance
 	jr c, .next1 ; branch ahead if this is a 10% chance effect..
@@ -7537,7 +7535,7 @@ FreezeBurnParalyzeEffect:
 	call PlayBattleAnimation
 	ld hl, FrozenText
 	jp PrintText
-.opponentAttacker:
+opponentAttacker:
 	ld a, [wBattleMonStatus] ; mostly same as above with addresses swapped for opponent
 	and a
 	jp nz, CheckDefrost
