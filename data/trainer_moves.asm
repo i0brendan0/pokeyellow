@@ -158,7 +158,84 @@ SpecialTrainerMoves:
 	db 0
 	
 	db BRENDAN, 1
-	db 1,1,NO_MOVE
+	db 1,1,TACKLE
+	db 1,2,NO_MOVE
+	db 1,3,NO_MOVE
+	db 1,4,NO_MOVE
+	db 2,1,TACKLE
+	db 2,2,NO_MOVE
+	db 2,3,NO_MOVE
+	db 2,4,NO_MOVE
+	db 3,1,TACKLE
+	db 3,2,NO_MOVE
+	db 3,3,NO_MOVE
+	db 3,4,NO_MOVE
+	db 4,1,TACKLE
+	db 4,2,NO_MOVE
+	db 4,3,NO_MOVE
+	db 4,4,NO_MOVE
+	db 5,1,TACKLE
+	db 5,2,NO_MOVE
+	db 5,3,NO_MOVE
+	db 5,4,NO_MOVE
+	db 6,1,TACKLE
+	db 6,2,NO_MOVE
+	db 6,3,NO_MOVE
+	db 6,4,NO_MOVE
+	db 0
+
+	db BRENDAN, 2
+	db 1,1,TACKLE
+	db 1,2,NO_MOVE
+	db 1,3,NO_MOVE
+	db 1,4,NO_MOVE
+	db 2,1,TACKLE
+	db 2,2,NO_MOVE
+	db 2,3,NO_MOVE
+	db 2,4,NO_MOVE
+	db 3,1,TACKLE
+	db 3,2,NO_MOVE
+	db 3,3,NO_MOVE
+	db 3,4,NO_MOVE
+	db 4,1,TACKLE
+	db 4,2,NO_MOVE
+	db 4,3,NO_MOVE
+	db 4,4,NO_MOVE
+	db 5,1,TACKLE
+	db 5,2,NO_MOVE
+	db 5,3,NO_MOVE
+	db 5,4,NO_MOVE
+	db 6,1,TACKLE
+	db 6,2,NO_MOVE
+	db 6,3,NO_MOVE
+	db 6,4,NO_MOVE
+	db 0
+
+	db BRENDAN, 3
+	db 1,1,TACKLE
+	db 1,2,NO_MOVE
+	db 1,3,NO_MOVE
+	db 1,4,NO_MOVE
+	db 2,1,TACKLE
+	db 2,2,NO_MOVE
+	db 2,3,NO_MOVE
+	db 2,4,NO_MOVE
+	db 3,1,TACKLE
+	db 3,2,NO_MOVE
+	db 3,3,NO_MOVE
+	db 3,4,NO_MOVE
+	db 4,1,TACKLE
+	db 4,2,NO_MOVE
+	db 4,3,NO_MOVE
+	db 4,4,NO_MOVE
+	db 5,1,TACKLE
+	db 5,2,NO_MOVE
+	db 5,3,NO_MOVE
+	db 5,4,NO_MOVE
+	db 6,1,TACKLE
+	db 6,2,NO_MOVE
+	db 6,3,NO_MOVE
+	db 6,4,NO_MOVE
 	db 0
 
 	db $ff
