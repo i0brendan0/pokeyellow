@@ -11,7 +11,7 @@ TechnicalMachines:
 	db DOUBLE_EDGE
 	db BUBBLEBEAM
 	db WATER_GUN
-	db ICE_BEAM
+	db ICE_SHARD
 	db BLIZZARD
 	db HYPER_BEAM
 	db PAY_DAY
@@ -19,10 +19,10 @@ TechnicalMachines:
 	db COUNTER
 	db SEISMIC_TOSS
 	db RAGE
-	db MEGA_DRAIN
+	db GIGA_DRAIN
 	db SOLARBEAM
 	db DRAGON_RAGE
-	db THUNDERBOLT
+	db DISCHARGE
 	db THUNDER
 	db EARTHQUAKE
 	db FISSURE
@@ -35,7 +35,7 @@ TechnicalMachines:
 	db BIDE
 	db METRONOME
 	db SELFDESTRUCT
-	db EGG_BOMB
+	db LIGHT_SCREEN
 	db FIRE_BLAST
 	db SWIFT
 	db SKULL_BASH

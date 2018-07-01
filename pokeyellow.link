@@ -200,6 +200,10 @@ ROMX $3A
 ROMX $3B
   "Move Tutor Script"
   "Move Tutor Text"
+  "Move Relearner Script"
+  "Move Relearner Text"
+  "Move Deleter Script"
+  "Move Deleter Text"
 
 ROMX $3C
   "bank3C"

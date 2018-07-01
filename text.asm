@@ -216,8 +216,9 @@ INCLUDE "text/maps/seafoam_islands_b4f.asm"
 
 _AIBattleWithdrawText::
 	TX_RAM wTrainerName
-	text " with-"
-	line "drew @"
+	text ""
+	line "withdrew"
+	cont "@"
 	TX_RAM wEnemyMonNick
 	text "!"
 	prompt
@@ -1159,9 +1160,9 @@ _LinkBattleLostText::
 
 _TrainerAboutToUseText::
 	TX_RAM wTrainerName
-	text " is"
-	line "about to use"
-	cont"@"
+	text ""
+	line "is about to use"
+	cont "@"
 	TX_RAM wEnemyMonNick
 	text "!"
 
@@ -1171,8 +1172,9 @@ _TrainerAboutToUseText::
 
 _TrainerSentOutText::
 	TX_RAM wTrainerName
-	text " sent"
-	line "out @"
+	text ""
+	line "sent out"
+	cont "@"
 	TX_RAM wEnemyMonNick
 	text "!"
 	done
@@ -3384,3 +3386,9 @@ INCLUDE "text/move_names.asm"
 SECTION "Move Tutor Text", ROMX
 
 INCLUDE "text/maps/move_tutor.asm"
+
+SECTION "Move Relearner Text", ROMX
+
+INCLUDE "text/maps/move_relearner.asm"
+
+SECTION "Move Deleter Text", ROMX

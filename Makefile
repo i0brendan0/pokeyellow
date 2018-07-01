@@ -22,16 +22,12 @@ $(foreach obj, $(objs:.o=), \
 .SECONDEXPANSION:
 # Suppress annoying intermediate file deletion messages.
 .PRECIOUS: %.2bpp
-.PHONY: all clean yellow compare
+.PHONY: all clean pink
 
-rom := pokeyellow.gbc
+rom := pokepink.gbc
 
 all: $(rom)
-yellow: $(rom)
-
-# For contributors to make sure a change didn't affect the contents of the rom.
-compare: yellow
-	@$(MD5) roms.md5
+pink: $(rom)
 
 clean:
 	rm -f $(rom) $(objs) $(rom:.gbc=.sym)
@@ -41,7 +37,7 @@ clean:
 $(objs): %.o: %.asm $$(%_dep)
 	rgbasm -h -o $@ $*.asm
 
-opts = -cjsv -k 01 -l 0x33 -m 0x1b -p 0 -r 03 -t "POKEMON YELLOW"
+opts = -cjsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON PINKV1"
 
 $(rom): $(objs)
 	rgblink -n $*.sym -l pokeyellow.link -o $@ $^

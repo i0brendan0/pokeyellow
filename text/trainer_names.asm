@@ -11,7 +11,7 @@ TrainerNames:
 	db "BIKER@"
 	db "BURGLAR@"
 	db "ENGINEER@"
-	db "JUGGLER@"
+	db "BRENDAN@"
 	db "FISHERMAN@"
 	db "SWIMMER@"
 	db "CUE BALL@"

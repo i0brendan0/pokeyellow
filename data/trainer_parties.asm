@@ -11,7 +11,7 @@ TrainerDataPointers:
 	dw BikerData
 	dw BurglarData
 	dw EngineerData
-	dw Juggler1Data
+	dw BrendanData
 	dw FisherData
 	dw SwimmerData
 	dw CueBallData
@@ -219,8 +219,8 @@ EngineerData:
 	db 21,VOLTORB,MAGNEMITE,0
 	db 21,MAGNEMITE,0
 	db 18,MAGNEMITE,MAGNEMITE,MAGNETON,0
-Juggler1Data:
-; none
+BrendanData:
+	db $FF,100,MANTINE,0
 FisherData:
 	db 17,GOLDEEN,TENTACOOL,GOLDEEN,0
 	db 17,TENTACOOL,STARYU,SHELLDER,0

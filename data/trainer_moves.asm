@@ -30,7 +30,7 @@ SpecialTrainerMoves:
 	db 0
 
 	db ERIKA,$1
-	db 1,3,MEGA_DRAIN
+	db 1,3,GIGA_DRAIN
 	db 2,1,RAZOR_LEAF
 	db 3,1,PETAL_DANCE
 	db 0
@@ -155,6 +155,10 @@ SpecialTrainerMoves:
 	db 5,1,THUNDERBOLT
 	db 6,1,AURORA_BEAM
 	db 6,3,QUICK_ATTACK
+	db 0
+	
+	db BRENDAN, 1
+	db 1,1,NO_MOVE
 	db 0
 
 	db $ff

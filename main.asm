@@ -2054,6 +2054,14 @@ SECTION "Move Tutor Script", ROMX
 
 INCLUDE "scripts/move_tutor.asm"
 
+SECTION "Move Relearner Script", ROMX
+
+INCLUDE "scripts/move_relearner.asm"
+
+SECTION "Move Deleter Script", ROMX
+
+INCLUDE "scripts/move_deleter.asm"
+
 SECTION "bank3C", ROMX
 
 INCLUDE "engine/bank3c.asm"

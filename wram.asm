@@ -830,6 +830,15 @@ wPikaPicUsedGFXEnd:: ; cc6c
 wAnimPalette:: ; cc79
 	ds 1
 
+wRelearnableMoves::
+; List of move ids that can be re-learend (Move Relearner)
+; First byte is the number of moves in this list.
+; List is terminated with $ff
+wDeletableMoves::
+; List of move ids that can be deleted (Move Deleter)
+; First byte is the number of moves in this list.
+; List is terminated with $ff
+
 	ds 29
 
 wNPCMovementDirections2:: ; cc97

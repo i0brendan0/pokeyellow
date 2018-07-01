@@ -24,10 +24,10 @@ _CeladonMartRoofText_484fe::
 	para "@"
 	TX_RAM wcf4b
 	text " contains"
-	line "ICE BEAM!"
+	line "ICY SHARD!"
 
-	para "It can freeze the"
-	line "target sometimes!@@"
+	para "It lowers the"
+	line "target's SPEED!@@"
 
 _CeladonMartRoofText_48504::
 	text "Yay!"
