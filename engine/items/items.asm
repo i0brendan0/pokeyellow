@@ -2085,8 +2085,16 @@ CoinCaseNumCoinsText:
 ItemUseOldRod:
 	call FishingInit
 	jp c, ItemUseNotTime
-	lb bc, 5, MAGIKARP
+	call Random
+	cp $F0
 	ld a, $1 ; set bite
+	ld b, 5
+	jr nc, .foundGoypin
+	ld c, MAGIKARP
+	jr RodResponse
+	
+.foundGoypin
+	ld c, GOYPIN
 	jr RodResponse
 
 ItemUseGoodRod:

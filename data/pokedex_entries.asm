@@ -30,7 +30,7 @@ PokedexEntryPointers:
 	dw PinsirDexEntry
 	dw TangelaDexEntry
 	dw TanglyDexEntry
-	dw TangrowthNoDexEntry
+	dw TangrowthDexEntry
 	dw GrowlitheDexEntry
 	dw OnixDexEntry
 	dw FearowDexEntry
@@ -160,7 +160,7 @@ PokedexEntryPointers:
 	dw MantineDexEntry
 	dw GoypinDexEntry
 	dw SnubbullDexEntry
-	dw GardieDexEntry
+	dw PudieDexEntry
 	dw PonytaDexEntry
 	dw RapidashDexEntry
 	dw RattataDexEntry

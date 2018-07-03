@@ -2,7 +2,7 @@ GainExperience:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
-	ld a, [BoostExpByExpAll]
+	ld a, [wBoostExpByExpAll]
 	and a
 	jr nz, .skip_divide
 	call DivideExpDataByNumMonsGainingExp

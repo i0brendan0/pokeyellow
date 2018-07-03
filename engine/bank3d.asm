@@ -222,14 +222,6 @@ TitleScreen_PlacePikachu:
 	ld de, TitleScreenPikachuTilemap
 	lb bc, 9, 12
 	call Bank3D_CopyBox
-	coord hl, 16, 10
-	ld [hl], $96
-	coord hl, 16, 11
-	ld [hl], $9d
-	coord hl, 16, 12
-	ld [hl], $a7
-	coord hl, 16, 13
-	ld [hl], $b1
 	ld hl, TitleScreenPikachuEyesOAMData
 	ld de, wOAMBuffer
 	ld bc, $20
@@ -288,19 +280,19 @@ TitleScreenPikaBubbleTilemap:
 
 TitleScreenPikachuTilemap:
 ; 12x9 (xy)
-	db $80, $81, $82, $83, $00, $00, $00, $00, $84, $85, $86, $87
-	db $88, $89, $8a, $8b, $8c, $8d, $8d, $8e, $8f, $8a, $90, $91
-	db $00, $92, $93, $8a, $8a, $8a, $8a, $8a, $8a, $94, $95, $00
-	db $00, $00, $97, $8a, $8a, $98, $99, $8a, $8a, $9a, $9b, $9c
-	db $00, $00, $9e, $9f, $a0, $a1, $a2, $a3, $a4, $a5, $a6, $8a
-	db $00, $a8, $a9, $aa, $8a, $ab, $ac, $8a, $ad, $ae, $af, $b0
-	db $00, $b2, $b3, $b4, $8a, $8a, $8a, $8a, $b5, $b6, $b7, $b8
-	db $00, $b9, $ba, $8a, $8a, $8a, $8a, $8a, $8a, $bb, $bc, $00
-	db $00, $00, $bd, $8a, $8a, $8a, $8a, $8a, $8a, $be, $bf, $00
+	db $80, $81, $00, $00, $00, $00, $00, $00, $00, $00, $86, $87
+	db $88, $89, $85, $8b, $8c, $8d, $8d, $8e, $8f, $82, $90, $91
+	db $97, $92, $93, $8a, $8a, $8a, $8a, $8a, $8a, $94, $95, $9a
+	db $fe, $ff, $8a, $8a, $8a, $8a, $8a, $8a, $8a, $8a, $98, $99
+	db $83, $84, $9e, $8a, $8a, $a1, $a2, $8a, $8a, $a5, $a6, $a7
+	db $00, $00, $a9, $8a, $aa, $ab, $ac, $ad, $8a, $ae, $00, $00
+	db $00, $00, $b3, $b4, $a3, $8a, $8a, $a4, $b5, $b6, $00, $00
+	db $00, $b9, $ba, $af, $b0, $b1, $b2, $b7, $b8, $bb, $00, $00
+	db $00, $bc, $bd, $96, $9d, $9f, $a0, $a8, $bf, $be, $00, $00
 
 PokemonLogoGraphics:	     INCBIN "gfx/pokemon_logo.2bpp"
 PokemonLogoGraphicsEnd:
-YellowLogoGraphics:	      INCBIN "gfx/yellow_titlescreen.2bpp"
+YellowLogoGraphics:	      INCBIN "gfx/pink_titlescreen.2bpp"
 YellowLogoGraphicsEnd:
 
 INCLUDE "engine/menu/link_menu.asm"

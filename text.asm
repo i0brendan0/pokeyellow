@@ -3380,6 +3380,8 @@ INCLUDE "text/pokedex_1.asm"
 
 SECTION "Pokedex Text 2", ROMX
 
+INCLUDE "text/pokedex_2.asm"
+
 SECTION "Move Names", ROMX
 
 INCLUDE "text/move_names.asm"
@@ -3393,3 +3395,5 @@ SECTION "Move Relearner Text", ROMX
 INCLUDE "text/maps/move_relearner.asm"
 
 SECTION "Move Deleter Text", ROMX
+
+INCLUDE "text/maps/move_deleter.asm"

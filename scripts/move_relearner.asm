@@ -57,7 +57,7 @@ MoveRelearnerText1:
 	ld a, MOVESLISTMENU
 	ld [wListMenuID], a
 	ld de, wRelearnableMoves
-	ld hl, wList
+	ld hl, wListPointer
 	ld [hl], e
 	inc hl
 	ld [hl], d

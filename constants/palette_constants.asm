@@ -241,22 +241,23 @@ const_value = 0
 	const PAL_IGGLYBUFF     ; $DB
 	const PAL_CROBAT        ; $DC
 	const PAL_MIKON         ; $DD
-	const PAL_PUDIE         ; $DE
-	const PAL_TURBAN        ; $DF
-	const PAL_MADAME        ; $E0
-	const PAL_DODRE         ; $E1
-	const PAL_GRIMBLER      ; $E2
-	const PAL_STEELIX       ; $E3
-	const PAL_REMORAID      ; $E4
-	const PAL_OCCUTANK      ; $E5
-	const PAL_KOTORA        ; $E6
-	const PAL_RAITORA       ; $E7
-	const PAL_BLISSEY       ; $E8
-	const PAL_KINGDRA       ; $E9
-	const PAL_GOYPIN        ; $EA
-	const PAL_BAIRINA       ; $EB
-	const PAL_SMOOCHUM      ; $EC
-	const PAL_ELEKID        ; $ED
+	const PAL_SLOWKING      ; $DE
+	const PAL_PUDIE         ; $DF
+	const PAL_TURBAN        ; $E0
+	const PAL_MADAME        ; $E1
+	const PAL_DODRE         ; $E2
+	const PAL_GRIMBLER      ; $E3
+	const PAL_STEELIX       ; $E4
+	const PAL_REMORAID      ; $E5
+	const PAL_OCCUTANK      ; $E6
+	const PAL_KOTORA        ; $E7
+	const PAL_RAITORA       ; $E8
+	const PAL_BLISSEY       ; $E9
+	const PAL_KINGDRA       ; $EA
+	const PAL_GOYPIN        ; $EB
+	const PAL_BAIRINA       ; $EC
+	const PAL_SMOOCHUM      ; $ED
+	const PAL_ELEKID        ; $EE
 	const PAL_MAGBY         ; $EF
 	const PAL_MANTINE       ; $F0
 	const PAL_WOLFMAN       ; $F1

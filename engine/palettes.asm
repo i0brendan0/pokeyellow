@@ -1153,7 +1153,7 @@ SendPlayerPal:
 	jr SendCustomPacket
 
 SendRivalPal:
-	ld a, PAL_GARY1
+	ld a, PAL_GARY
 	jr SendCustomPacket
 
 SendCustomPacket:
